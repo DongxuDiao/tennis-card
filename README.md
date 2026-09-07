@@ -4,7 +4,7 @@
 >
 > A tennis player card generator — upload photos, auto background removal, dual templates, one-click PNG export.
 
-**在线体验 / Live Demo：<https://tenniscard.vercel.app>**
+**在线体验 / Live Demo：<https://tennis-card.pages.dev>**（Cloudflare Pages）
 
 | 经典白 · Classic | 黑金 · Dark |
 |---|---|
@@ -24,15 +24,16 @@
 - **导出**：1x / 2x / 3x PNG（2x 即 1940×3240）
 - **自动保存**：内容（含图片）存 localStorage，刷新不丢
 
-## 🚀 运行
+## 🚀 运行与部署
 
 纯静态站点，无构建、无依赖：
 
 ```bash
-# 方式一：本地静态服务
-python3 -m http.server 8765   # 打开 http://localhost:8765
+# 本地预览
+python3 -m http.server 8765   # 打开 http://localhost:8765（或直接双击 index.html，AI 抠图不可用）
 
-# 方式二：直接双击 index.html（AI 抠图不可用，其余功能正常）
+# 部署到 Cloudflare Pages（需先 wrangler login）
+npx wrangler pages deploy . --project-name tennis-card --branch main
 ```
 
 > 💡 白色球鞋拍在白底上时本地去底容易误伤，把「容差」调小，或改用 AI 智能抠图。
